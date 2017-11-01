@@ -98,7 +98,8 @@ article.post:last-of-type{
 
 /* Page Layout */
 article.page h2 {
-	font-size: 300%;
+	font-size: 250%;
+	clear: left;
 }
 
 /* Two Column Title Layout */
@@ -133,7 +134,7 @@ div.info-box p {
 
 /* Children Links */
 .children-links {
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 	font-size: 80%;
 }
 
@@ -169,4 +170,19 @@ div.info-box p {
 	border-bottom: 1px solid #DDD;
 	color: #333;
 	cursor: default;
+}
+
+/* Post Styles */
+.post h2 {
+	margin-bottom: 0;
+}
+
+p.post-info {
+	font-size: 87%;
+	color: #999;
+}
+
+p.post-info a:link,
+p.post-info a: visited {
+	color: #999;
 }

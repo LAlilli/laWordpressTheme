@@ -13,7 +13,7 @@ register_nav_menus(array(
 	'footer' => __( 'Footer Menu'),
 ));
 
-/*// Get top ancestor for child menu
+// Get top ancestor for child menu
 function get_top_ancestor_id() {
 	
 	global  $post;
@@ -35,4 +35,3 @@ function has_children() {
 	$pages = get_pages('child_of=' . $post->ID);
 	return count($pages);
 }
-*/

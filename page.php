@@ -8,31 +8,30 @@ get_header();
 	<article class="post page">
 		
 		<nav class="site-nav children-links clearfix">
-		
-		<?php
-		if ( $post->post_parent ) {
-			$title = get_the_title( $post->post_parent );
-			$children = wp_list_pages( array(
-				'title_li' => '',
-				'child_of' => $post->post_parent,
-				'echo'     => 0
-			) );
-		} else {
-			$title = get_the_title( $post->post_parent );
-			$children = wp_list_pages( array(
-				'title_li' => '',
-				'child_of' => $post->ID,
-				'echo'     => 0
-			) );
-		}
- 
-		if ( $children ) : ?>
-			<ul>
-				<?php echo $title; ?>
-				<?php echo $children; ?>
-			</ul>
+			<span class="parent-link"><a href="<?php echo get_the_permalink(get_top_ancestor_id()); ?>">
+			<?php echo get_the_title(get_top_ancestor_id()); ?></a></span>
 			
-		<?php endif; ?>
+			<?php
+			if ( $post->post_parent ) {
+				$children = wp_list_pages( array(
+					'title_li' => '',
+					'child_of' => get_top_ancestor_id(),
+					'echo'     => 0
+				) );
+			} else {
+				$children = wp_list_pages( array(
+					'title_li' => '',
+					'child_of' => get_top_ancestor_id(),
+					'echo'     => 0
+				) );
+			}
+ 
+			if ( $children ) : ?>
+				<ul>
+					<?php echo $children; ?>
+				</ul>
+			
+			<?php endif; ?>
 		</nav>
 		
 		<h2><?php the_title(); ?></h2>
